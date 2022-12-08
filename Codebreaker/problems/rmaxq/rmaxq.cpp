@@ -1,4 +1,3 @@
-// solving rmaxq
 #include <bits/stdc++.h>
 #define int long long
 #define endl '\n'
@@ -32,7 +31,7 @@ struct node {
 
     void update(int S, int E, int V) {
         if (s == S && e == E) {
-            lazy = V; return;
+            lazy += V; return;
         } else {
             if (S > m) r -> update(S, E, V);
             else if (E < m+1) l -> update(S, E, V);
