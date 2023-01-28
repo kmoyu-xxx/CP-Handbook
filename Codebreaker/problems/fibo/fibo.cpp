@@ -1,23 +1,23 @@
 #include <bits/stdc++.h>
+#define int long long
+#define endl '\n'
+#define fast ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define ping cout << "pong\n";
 using namespace std;
-const int maxn = 2e5+10;
-const int mod = 998244353;
-int f[maxn];
+int mod = 998244353;
 
-int fibo(int n) {
-    if (f[n] != -1) {
-        return f[n];
-    } else {
-        return f[n] = (fibo(n-1) % mod + fibo(n-2) % mod);
-    }
-}
-
-int main() {
+signed main() {
+    fast;
     int n; cin >> n;
-    memset(f, -1, sizeof(f));
-    f[0] = 0, f[1] = 1;
-    
-    for (int i = 0; i <= n; i++) {
-        cout << fibo(i) % mod << '\n';
+    vector<int> fibo(200005);
+    fibo[0] = 0;
+    fibo[1] = 1;
+    for (int i = 0; i < n+1; i++) {
+        if (i < 2) cout << fibo[i] << endl;
+        else {
+            int c = fibo[i-1] % mod + fibo[i-2] % mod;
+            fibo[i] = c % mod;
+            cout << fibo[i] << endl;
+        }
     }
 }
