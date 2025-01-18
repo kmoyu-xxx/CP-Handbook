@@ -1,27 +1,14 @@
 #include <bits/stdc++.h>
+#define int long long
 using namespace std;
-int main() {
-    int n, x, p = 0; cin >> n;
-    vector<int> v;
-
-    for (int i = 0; i < n; i++) {
-        cin >> x;
-        v.push_back(x);
-    }
-
+signed main() {
+    int n,t=0; cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
     sort(v.rbegin(), v.rend());
-
-    while (v.size() >= 4) {
-        p += v[0] + v[1] + v[2];
-        for (int i = 0; i < 4; i++) {
-            v.erase(v.begin());
-        }
+    for (int i = 0; i < n; i++) {
+        if (i % 4 % 3 == 0 && i % 4 != 0) continue;
+        t += v[i];
     }
-
-    if (v.size() > 0) {
-        for (int i = 0; i < v.size(); i++) {
-            p += v[i];
-        }
-    }
-    cout << p << '\n';
+    cout << t;
 }
