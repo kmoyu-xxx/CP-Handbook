@@ -25,6 +25,6 @@ signed main() {
             useless++;
         }
     }
-
+    
     cout << r.size() - useless;
 }
