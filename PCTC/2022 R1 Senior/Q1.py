@@ -1,1 +1,0 @@
-print(200 + int(input())*8)

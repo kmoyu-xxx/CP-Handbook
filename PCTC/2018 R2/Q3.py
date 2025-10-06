@@ -1,1 +1,0 @@
-print("E"*len(input()))

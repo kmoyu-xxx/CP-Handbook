@@ -1,1 +1,0 @@
-print(180-sum([int(input()) for i in range(3)]))

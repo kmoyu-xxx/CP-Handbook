@@ -1,1 +1,0 @@
-print(f"Hello {input()}, your name is now {input()}.")

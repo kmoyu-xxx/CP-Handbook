@@ -1,1 +1,0 @@
-print("\n".join([x for x in input() if x in "aeiou"]))
